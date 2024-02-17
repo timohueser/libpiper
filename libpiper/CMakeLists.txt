@@ -1,6 +1,13 @@
 add_library(libpiper STATIC src/piper.cpp src/tashkeel.cpp src/shared.cpp src/phonemize.cpp
   src/phoneme_ids.cpp)
 
+set_target_properties(libpiper PROPERTIES
+  CXX_STANDARD 11
+  CXX_STANDARD_REQUIRED YES
+  CXX_EXTENSIONS NO
+)
+
+
 if(MSVC)
   # Force compiler to use UTF-8 for IPA constants
   add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
