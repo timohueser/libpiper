@@ -16,3 +16,5 @@ htmlcov
 /install/
 /download/
 *.so
+
+lib/

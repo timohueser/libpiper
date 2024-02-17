@@ -1,17 +1,16 @@
 #ifndef PIPER_H_
 #define PIPER_H_
 
+#include "phoneme_ids.hpp"
+#include "phonemize.hpp"
+#include "tashkeel.hpp"
 #include <fstream>
 #include <functional>
 #include <map>
+#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
 #include <optional>
 #include <string>
 #include <vector>
-
-#include <onnxruntime_cxx_api.h>
-#include <piper-phonemize/phoneme_ids.hpp>
-#include <piper-phonemize/phonemize.hpp>
-#include <piper-phonemize/tashkeel.hpp>
 
 #include "json.hpp"
 
