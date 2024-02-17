@@ -30,7 +30,6 @@
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
 
-#include "json.hpp"
 #include "piper.hpp"
 
 using namespace std;

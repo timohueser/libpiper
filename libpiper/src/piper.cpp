@@ -6,7 +6,7 @@
 #include <stdexcept>
 
 #include <espeak-ng/speak_lib.h>
-#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
+#include <onnxruntime_cxx_api.h>
 #include <spdlog/spdlog.h>
 
 #include "json.hpp"

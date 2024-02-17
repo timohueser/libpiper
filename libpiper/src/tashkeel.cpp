@@ -8,7 +8,7 @@
 
 #include "tashkeel.hpp"
 #include "uni_algo.h"
-#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
+#include <onnxruntime_cxx_api.h>
 
 namespace tashkeel {
 

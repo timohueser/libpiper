@@ -1,0 +1,6 @@
+file(READ "${CMAKE_CURRENT_LIST_DIR}/VERSION" piper_version)
+
+add_executable(piper src/main.cpp)
+
+target_link_libraries(piper PRIVATE libpiper)
+

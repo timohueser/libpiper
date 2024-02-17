@@ -1,0 +1,168 @@
+add_library(libpiper STATIC src/piper.cpp src/tashkeel.cpp src/shared.cpp src/phonemize.cpp
+  src/phoneme_ids.cpp)
+
+if(MSVC)
+  # Force compiler to use UTF-8 for IPA constants
+  add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+  add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+elseif(NOT APPLE)
+  # Linux flags
+  string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wl,-rpath,'$ORIGIN'")
+  string(APPEND CMAKE_C_FLAGS " -Wall -Wextra")
+endif()
+
+# NOTE: external project prefix are shortened because of path length restrictions on Windows
+
+
+# ---- onnxruntime ---
+
+# Look for onnxruntime files in <root>/lib
+if(NOT DEFINED ONNXRUNTIME_DIR)
+  if(NOT DEFINED ONNXRUNTIME_VERSION)
+    set(ONNXRUNTIME_VERSION "1.14.1")
+  endif()
+
+  if(WIN32)
+    # Windows x86-64
+    set(ONNXRUNTIME_PREFIX "onnxruntime-win-x64-${ONNXRUNTIME_VERSION}")
+    set(ONNXRUNTIME_EXT "zip")
+  elseif(APPLE)
+    if(CMAKE_SYSTEM_PROCESSOR STREQUAL x86_64)
+      # MacOS x86-64
+      set(ONNXRUNTIME_PREFIX "onnxruntime-osx-x86_64-${ONNXRUNTIME_VERSION}")
+    elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL arm64)
+      # MacOS Apple Silicon
+      set(ONNXRUNTIME_PREFIX "onnxruntime-osx-arm64-${ONNXRUNTIME_VERSION}")
+    else()
+      message(FATAL_ERROR "Unsupported architecture for onnxruntime")
+    endif()
+
+    set(ONNXRUNTIME_EXT "tgz")
+  else()
+    if(CMAKE_SYSTEM_PROCESSOR STREQUAL x86_64)
+      # Linux x86-64
+      set(ONNXRUNTIME_PREFIX "onnxruntime-linux-x64-${ONNXRUNTIME_VERSION}")
+    elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL aarch64)
+      # Linux ARM 64-bit
+      set(ONNXRUNTIME_PREFIX "onnxruntime-linux-aarch64-${ONNXRUNTIME_VERSION}")
+    elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL armv7l)
+      # Linux ARM 32-bit
+      set(ONNXRUNTIME_PREFIX "onnxruntime-linux-arm32-${ONNXRUNTIME_VERSION}")
+      set(ONNXRUNTIME_URL "https://github.com/synesthesiam/prebuilt-apps/releases/download/v1.0/onnxruntime-linux-arm32-${ONNXRUNTIME_VERSION}.tgz")
+    else()
+      message(FATAL_ERROR "Unsupported architecture for onnxruntime")
+    endif()
+
+    set(ONNXRUNTIME_EXT "tgz")
+  endif()
+
+  if(NOT DEFINED ONNXRUNTIME_URL)
+    set(ONNXRUNTIME_URL "https://github.com/microsoft/onnxruntime/releases/download/v${ONNXRUNTIME_VERSION}/${ONNXRUNTIME_PREFIX}.${ONNXRUNTIME_EXT}")
+  endif()
+
+  set(ONNXRUNTIME_FILENAME "${ONNXRUNTIME_PREFIX}.${ONNXRUNTIME_EXT}")
+  set(ONNXRUNTIME_DIR "${CMAKE_CURRENT_LIST_DIR}/lib/${ONNXRUNTIME_PREFIX}")
+
+  if(NOT EXISTS "${ONNXRUNTIME_DIR}")
+    if(NOT EXISTS "download/${ONNXRUNTIME_FILENAME}")
+      # Download onnxruntime release
+      message("Downloading ${ONNXRUNTIME_URL}")
+      file(DOWNLOAD "${ONNXRUNTIME_URL}" "download/${ONNXRUNTIME_FILENAME}")
+    endif()
+
+    # Extract .zip or .tgz to a directory like lib/onnxruntime-linux-x64-1.14.1/
+    file(ARCHIVE_EXTRACT INPUT "download/${ONNXRUNTIME_FILENAME}" DESTINATION "${CMAKE_CURRENT_LIST_DIR}/lib")
+  endif()
+endif()
+
+# ---- espeak-ng ---
+if(NOT DEFINED ESPEAK_NG_DIR)
+  set(ESPEAK_NG_DIR "${CMAKE_CURRENT_BINARY_DIR}/ei")
+
+  include(ExternalProject)
+  ExternalProject_Add(
+    espeak_ng_external
+    PREFIX "${CMAKE_CURRENT_BINARY_DIR}/e"
+    URL "https://github.com/rhasspy/espeak-ng/archive/0f65aa301e0d6bae5e172cc74197d32a6182200f.zip"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${ESPEAK_NG_DIR}
+    CMAKE_ARGS -DUSE_ASYNC:BOOL=OFF
+    CMAKE_ARGS -DBUILD_SHARED_LIBS:BOOL=ON
+    CMAKE_ARGS -DUSE_MBROLA:BOOL=OFF
+    CMAKE_ARGS -DUSE_LIBSONIC:BOOL=OFF
+    CMAKE_ARGS -DUSE_LIBPCAUDIO:BOOL=OFF
+    CMAKE_ARGS -DUSE_KLATT:BOOL=OFF
+    CMAKE_ARGS -DUSE_SPEECHPLAYER:BOOL=OFF
+    CMAKE_ARGS -DEXTRA_cmn:BOOL=ON
+    CMAKE_ARGS -DEXTRA_ru:BOOL=ON
+    CMAKE_ARGS -DCMAKE_C_FLAGS="-D_FILE_OFFSET_BITS=64"
+  )
+  add_dependencies(libpiper espeak_ng_external)
+endif()
+
+# ---- fmt ---
+
+if(NOT DEFINED FMT_DIR)
+  set(FMT_VERSION "10.0.0")
+  set(FMT_DIR "${CMAKE_CURRENT_BINARY_DIR}/fi")
+
+  include(ExternalProject)
+  ExternalProject_Add(
+    fmt_external
+    PREFIX "${CMAKE_CURRENT_BINARY_DIR}/f"
+    URL "https://github.com/fmtlib/fmt/archive/refs/tags/${FMT_VERSION}.zip"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${FMT_DIR}
+    CMAKE_ARGS -DFMT_TEST:BOOL=OFF  # Don't build all the tests
+  )
+  add_dependencies(libpiper fmt_external)
+endif()
+
+# ---- spdlog ---
+
+if(NOT DEFINED SPDLOG_DIR)
+  set(SPDLOG_DIR "${CMAKE_CURRENT_BINARY_DIR}/si")
+  set(SPDLOG_VERSION "1.12.0")
+  ExternalProject_Add(
+    spdlog_external
+    PREFIX "${CMAKE_CURRENT_BINARY_DIR}/s"
+    URL "https://github.com/gabime/spdlog/archive/refs/tags/v${SPDLOG_VERSION}.zip"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${SPDLOG_DIR}
+  )
+  add_dependencies(libpiper spdlog_external)
+endif()
+
+# ---- Declare executable ----
+
+if((NOT MSVC) AND (NOT APPLE))
+  # Linux flags
+  string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wl,-rpath,'$ORIGIN'")
+  string(APPEND CMAKE_C_FLAGS " -Wall -Wextra")
+  target_link_libraries(libpiper -static-libgcc -static-libstdc++)
+
+  set(PIPER_EXTRA_LIBRARIES "pthread")
+endif()
+
+target_link_libraries(libpiper
+  fmt
+  spdlog
+  espeak-ng
+  onnxruntime
+  ${PIPER_EXTRA_LIBRARIES}
+)
+
+target_link_directories(libpiper PUBLIC
+  ${FMT_DIR}/lib
+  ${SPDLOG_DIR}/lib
+  ${ESPEAK_NG_DIR}/lib
+  ${ONNXRUNTIME_DIR}/lib
+)
+
+target_include_directories(libpiper PUBLIC
+  ${FMT_DIR}/include
+  ${SPDLOG_DIR}/include
+  ${PIPER_PHONEMIZE_DIR}/src
+  ${ONNXRUNTIME_DIR}/include
+  ${ESPEAK_NG_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+
+target_compile_definitions(libpiper PUBLIC _PIPER_VERSION=${piper_version})

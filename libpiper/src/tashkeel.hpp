@@ -6,7 +6,7 @@
 #include <string>
 
 #include "shared.hpp"
-#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
+#include <onnxruntime_cxx_api.h>
 
 // https://github.com/mush42/libtashkeel
 namespace tashkeel {

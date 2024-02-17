@@ -7,7 +7,7 @@
 #include <fstream>
 #include <functional>
 #include <map>
-#include <onnxruntime/core/session/onnxruntime_cxx_api.h>
+#include <onnxruntime_cxx_api.h>
 #include <optional>
 #include <string>
 #include <vector>
