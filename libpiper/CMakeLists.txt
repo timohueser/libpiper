@@ -2,7 +2,7 @@ add_library(libpiper STATIC src/piper.cpp src/tashkeel.cpp src/shared.cpp src/ph
   src/phoneme_ids.cpp)
 
 set_target_properties(libpiper PROPERTIES
-  CXX_STANDARD 11
+  CXX_STANDARD 17
   CXX_STANDARD_REQUIRED YES
   CXX_EXTENSIONS NO
 )
