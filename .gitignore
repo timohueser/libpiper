@@ -13,10 +13,6 @@ htmlcov
 /build/
 /local/
 /dist/
-/lib/
 /install/
 /download/
 *.so
-
-.venv/
-lightning_logs/

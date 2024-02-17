@@ -1,0 +1,3 @@
+[submodule "lib/piper-phonemize"]
+	path = lib/piper-phonemize
+	url = git@github.com:timohueser/piper-phonemize.git
