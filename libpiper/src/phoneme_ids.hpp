@@ -13,7 +13,8 @@ namespace piper {
 typedef int64_t PhonemeId;
 typedef std::map<Phoneme, std::vector<PhonemeId>> PhonemeIdMap;
 
-struct PhonemeIdConfig {
+struct PhonemeIdConfig
+{
   Phoneme pad = U'_';
   Phoneme bos = U'^';
   Phoneme eos = U'$';
@@ -209,25 +210,21 @@ static std::map<std::string, PhonemeIdMap> DEFAULT_ALPHABET = {
     // Ukrainian
     {"uk",
      {
-         {U'_', {0}},  {U'^', {1}},       {U'$', {2}},       {U' ', {3}},
-         {U'!', {4}},  {U'\'', {5}},      {U',', {6}},       {U'-', {7}},
-         {U'.', {8}},  {U':', {9}},       {U';', {10}},      {U'?', {11}},
-         {U'а', {12}}, {U'б', {13}},      {U'в', {14}},      {U'г', {15}},
-         {U'ґ', {16}}, {U'д', {17}},      {U'е', {18}},      {U'є', {19}},
-         {U'ж', {20}}, {U'з', {21}},      {U'и', {22}},      {U'і', {23}},
-         {U'ї', {24}}, {U'й', {25}},      {U'к', {26}},      {U'л', {27}},
-         {U'м', {28}}, {U'н', {29}},      {U'о', {30}},      {U'п', {31}},
-         {U'р', {32}}, {U'с', {33}},      {U'т', {34}},      {U'у', {35}},
-         {U'ф', {36}}, {U'х', {37}},      {U'ц', {38}},      {U'ч', {39}},
-         {U'ш', {40}}, {U'щ', {41}},      {U'ь', {42}},      {U'ю', {43}},
-         {U'я', {44}}, {U'\u0301', {45}}, {U'\u0306', {46}}, {U'\u0308', {47}},
+         {U'_', {0}},  {U'^', {1}},  {U'$', {2}},  {U' ', {3}},       {U'!', {4}},       {U'\'', {5}},
+         {U',', {6}},  {U'-', {7}},  {U'.', {8}},  {U':', {9}},       {U';', {10}},      {U'?', {11}},
+         {U'а', {12}}, {U'б', {13}}, {U'в', {14}}, {U'г', {15}},      {U'ґ', {16}},      {U'д', {17}},
+         {U'е', {18}}, {U'є', {19}}, {U'ж', {20}}, {U'з', {21}},      {U'и', {22}},      {U'і', {23}},
+         {U'ї', {24}}, {U'й', {25}}, {U'к', {26}}, {U'л', {27}},      {U'м', {28}},      {U'н', {29}},
+         {U'о', {30}}, {U'п', {31}}, {U'р', {32}}, {U'с', {33}},      {U'т', {34}},      {U'у', {35}},
+         {U'ф', {36}}, {U'х', {37}}, {U'ц', {38}}, {U'ч', {39}},      {U'ш', {40}},      {U'щ', {41}},
+         {U'ь', {42}}, {U'ю', {43}}, {U'я', {44}}, {U'\u0301', {45}}, {U'\u0306', {46}}, {U'\u0308', {47}},
          {U'—', {48}},
      }}};
 
-PIPERPHONEMIZE_EXPORT void
-phonemes_to_ids(const std::vector<Phoneme> &phonemes, PhonemeIdConfig &config,
-                std::vector<PhonemeId> &phonemeIds,
-                std::map<Phoneme, std::size_t> &missingPhonemes);
+PIPERPHONEMIZE_EXPORT void phonemes_to_ids(const std::vector<Phoneme>& phonemes,
+                                           PhonemeIdConfig& config,
+                                           std::vector<PhonemeId>& phonemeIds,
+                                           std::map<Phoneme, std::size_t>& missingPhonemes);
 
 } // namespace piper
 

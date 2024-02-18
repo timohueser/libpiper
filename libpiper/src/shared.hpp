@@ -7,5 +7,4 @@
 #define PIPERPHONEMIZE_EXPORT
 #endif
 
-
 #endif // SHARED_H_

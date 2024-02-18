@@ -21,7 +21,8 @@ extern std::set<int> INVALID_HARAKA_IDS;
 extern std::map<char32_t, int> inputVocab;
 extern std::map<int, std::vector<char32_t>> outputVocab;
 
-struct State {
+struct State
+{
   Ort::Session onnx;
   Ort::AllocatorWithDefaultOptions allocator;
   Ort::SessionOptions options;
@@ -30,8 +31,8 @@ struct State {
   State() : onnx(nullptr){};
 };
 
-PIPERPHONEMIZE_EXPORT void tashkeel_load(std::string modelPath, State &state);
-PIPERPHONEMIZE_EXPORT std::string tashkeel_run(std::string text, State &state);
+PIPERPHONEMIZE_EXPORT void tashkeel_load(std::string modelPath, State& state);
+PIPERPHONEMIZE_EXPORT std::string tashkeel_run(std::string text, State& state);
 
 } // namespace tashkeel
 

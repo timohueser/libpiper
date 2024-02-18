@@ -1,5 +1,5 @@
-add_library(libpiper STATIC src/piper.cpp src/tashkeel.cpp src/shared.cpp src/phonemize.cpp
-  src/phoneme_ids.cpp)
+add_library(libpiper STATIC src/tashkeel.cpp src/shared.cpp src/phonemize.cpp
+  src/phoneme_ids.cpp src/PiperModel.cpp src/Voice.cpp src/FileManager.cpp)
 
 set_target_properties(libpiper PROPERTIES
   CXX_STANDARD 17
@@ -173,3 +173,5 @@ target_include_directories(libpiper PUBLIC
 )
 
 target_compile_definitions(libpiper PUBLIC _PIPER_VERSION=${piper_version})
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/share DESTINATION ${CMAKE_BINARY_DIR}/libpiper)
