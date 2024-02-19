@@ -5,7 +5,6 @@
 #include <set>
 #include <string>
 
-#include "shared.hpp"
 #include <onnxruntime_cxx_api.h>
 
 // https://github.com/mush42/libtashkeel
@@ -31,8 +30,8 @@ struct State
   State() : onnx(nullptr){};
 };
 
-PIPERPHONEMIZE_EXPORT void tashkeel_load(std::string modelPath, State& state);
-PIPERPHONEMIZE_EXPORT std::string tashkeel_run(std::string text, State& state);
+void tashkeel_load(std::string modelPath, State& state);
+std::string tashkeel_run(std::string text, State& state);
 
 } // namespace tashkeel
 

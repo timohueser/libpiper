@@ -1,5 +1,4 @@
-#include "PiperModel.hpp"
-#include "Voice.hpp"
+#include "Piper.hpp"
 
 #include <chrono>
 #include <filesystem>
@@ -16,14 +15,20 @@
 using namespace piper;
 
 int main() {
-  std::shared_ptr<Voice> voice = std::make_shared<Voice>("libpiper/share/voice-models/test_voice.onnx",
-                                                         "libpiper/share/voice-models/test_voice.onnx.json");
-  std::shared_ptr<piper::PiperModel> piperModel = std::make_shared<piper::PiperModel>(voice);
+  PiperModel piperModel("/Users/timo/Documents/piper-voices/en/en_US/kusal/medium/en_US-kusal-medium.onnx",
+                        "/Users/timo/Documents/piper-voices/en/en_US/kusal/medium/en_US-kusal-medium.onnx.json");
 
-  std::vector<int16_t> audio =
-      piperModel->textToSpeech("Lets do the cooking Colleen! I really want to do the COCK with you!");
+  const char* story =
+      "JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera "
+      "recording setup, and an idea of what you want to track. Our Toolbox will assist you on every step along the "
+      "way, "
+      "from recording synchronised videos, to quickly and consistently annotating your data, all the way to the final "
+      "3D pose predictions. If you are interested in setting up a 3D Motion Capture System or just want to learn more "
+      "about our toolbox, we strongly recommend having a look at our Getting Started Guide and our Manual. Here you'll "
+      "find an overview of our workflow, as well as tutorials to help you build a successful 3D tracking pipeline with "
+      "JARVIS.";
 
-  std::cout << "Audio size: " << audio.size() << std::endl;
+  std::vector<int16_t> audio = piperModel.textToSpeech(story);
 
   // Timestamp is used for path to output WAV file
   const auto now = std::chrono::system_clock::now();
@@ -35,7 +40,7 @@ int main() {
   outputName << timestamp << ".wav";
   outputPath.append(outputName.str());
 
-  piperModel->saveToWavFile(outputPath.string(), audio);
+  piperModel.saveToWavFile(outputPath.string(), audio);
 
   return 0;
 }

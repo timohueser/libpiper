@@ -6,6 +6,11 @@
 using namespace piper;
 
 Voice::Voice(const std::string& modelPath, const std::string& modelConfigPath) {
+  std::string configPath = std::string(modelConfigPath);
+  if (modelConfigPath == "")
+  {
+    configPath = std::string(modelPath) + ".json";
+  }
   // Load Onnx model and JSON config file
   spdlog::debug("Parsing voice config at {}", modelConfigPath);
   std::ifstream modelConfigFile(modelConfigPath);

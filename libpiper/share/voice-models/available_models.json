@@ -1,0 +1,1499 @@
+{
+  "languages": [
+    {
+      "name": "Slovenian",
+      "directory": "sl",
+      "dialects": [
+        {
+          "name": "Slovenia",
+          "directory": "sl_SI",
+          "voices": [
+            {
+              "name": "artur",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sl_SI-artur-medium.onnx",
+                  "model_config": "sl_SI-artur-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slovak",
+      "directory": "sk",
+      "dialects": [
+        {
+          "name": "Slovakia",
+          "directory": "sk_SK",
+          "voices": [
+            {
+              "name": "lili",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sk_SK-lili-medium.onnx",
+                  "model_config": "sk_SK-lili-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Swahili",
+      "directory": "sw",
+      "dialects": [
+        {
+          "name": "DRC",
+          "directory": "sw_CD",
+          "voices": [
+            {
+              "name": "lanfrica",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sw_CD-lanfrica-medium.onnx",
+                  "model_config": "sw_CD-lanfrica-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Polish",
+      "directory": "pl",
+      "dialects": [
+        {
+          "name": "Poland",
+          "directory": "pl_PL",
+          "voices": [
+            {
+              "name": "mls_6892",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "pl_PL-mls_6892-low.onnx",
+                  "model_config": "pl_PL-mls_6892-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mc_speech",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "pl_PL-mc_speech-medium.onnx",
+                  "model_config": "pl_PL-mc_speech-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "gosia",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "pl_PL-gosia-medium.onnx",
+                  "model_config": "pl_PL-gosia-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "darkman",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "pl_PL-darkman-medium.onnx",
+                  "model_config": "pl_PL-darkman-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vietnamese",
+      "directory": "vi",
+      "dialects": [
+        {
+          "name": "Vietnam",
+          "directory": "vi_VN",
+          "voices": [
+            {
+              "name": "vivos",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "vi_VN-vivos-x_low.onnx",
+                  "model_config": "vi_VN-vivos-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "25hours_single",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "vi_VN-25hours_single-low.onnx",
+                  "model_config": "vi_VN-25hours_single-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "vais1000",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "vi_VN-vais1000-medium.onnx",
+                  "model_config": "vi_VN-vais1000-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Swedish",
+      "directory": "sv",
+      "dialects": [
+        {
+          "name": "Sweden",
+          "directory": "sv_SE",
+          "voices": [
+            {
+              "name": "nst",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sv_SE-nst-medium.onnx",
+                  "model_config": "sv_SE-nst-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Danish",
+      "directory": "da",
+      "dialects": [
+        {
+          "name": "Denmark",
+          "directory": "da_DK",
+          "voices": [
+            {
+              "name": "talesyntese",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "da_DK-talesyntese-medium.onnx",
+                  "model_config": "da_DK-talesyntese-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kazakh",
+      "directory": "kk",
+      "dialects": [
+        {
+          "name": "Kazakhstan",
+          "directory": "kk_KZ",
+          "voices": [
+            {
+              "name": "iseke",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "kk_KZ-iseke-x_low.onnx",
+                  "model_config": "kk_KZ-iseke-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "issai",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "kk_KZ-issai-high.onnx",
+                  "model_config": "kk_KZ-issai-high.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "raya",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "kk_KZ-raya-x_low.onnx",
+                  "model_config": "kk_KZ-raya-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Norwegian",
+      "directory": "no",
+      "dialects": [
+        {
+          "name": "Norway",
+          "directory": "no_NO",
+          "voices": [
+            {
+              "name": "talesyntese",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "no_NO-talesyntese-medium.onnx",
+                  "model_config": "no_NO-talesyntese-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Greek",
+      "directory": "el",
+      "dialects": [
+        {
+          "name": "Greece",
+          "directory": "el_GR",
+          "voices": [
+            {
+              "name": "rapunzelina",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "el_GR-rapunzelina-low.onnx",
+                  "model_config": "el_GR-rapunzelina-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Luxembourgish",
+      "directory": "lb",
+      "dialects": [
+        {
+          "name": "Luxembourg",
+          "directory": "lb_LU",
+          "voices": [
+            {
+              "name": "marylux",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "lb_LU-marylux-medium.onnx",
+                  "model_config": "lb_LU-marylux-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Italian",
+      "directory": "it",
+      "dialects": [
+        {
+          "name": "Italy",
+          "directory": "it_IT",
+          "voices": [
+            {
+              "name": "riccardo",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "it_IT-riccardo-x_low.onnx",
+                  "model_config": "it_IT-riccardo-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Catalan",
+      "directory": "ca",
+      "dialects": [
+        {
+          "name": "Spain",
+          "directory": "ca_ES",
+          "voices": [
+            {
+              "name": "upc_ona",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ca_ES-upc_ona-medium.onnx",
+                  "model_config": "ca_ES-upc_ona-medium.onnx.json"
+                },
+                {
+                  "name": "x_low",
+                  "model": "ca_ES-upc_ona-x_low.onnx",
+                  "model_config": "ca_ES-upc_ona-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "upc_pau",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "ca_ES-upc_pau-x_low.onnx",
+                  "model_config": "ca_ES-upc_pau-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Icelandic",
+      "directory": "is",
+      "dialects": [
+        {
+          "name": "Iceland",
+          "directory": "is_IS",
+          "voices": [
+            {
+              "name": "salka",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "is_IS-salka-medium.onnx",
+                  "model_config": "is_IS-salka-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "bui",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "is_IS-bui-medium.onnx",
+                  "model_config": "is_IS-bui-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "steinn",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "is_IS-steinn-medium.onnx",
+                  "model_config": "is_IS-steinn-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "ugla",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "is_IS-ugla-medium.onnx",
+                  "model_config": "is_IS-ugla-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Czech",
+      "directory": "cs",
+      "dialects": [
+        {
+          "name": "Czech Republic",
+          "directory": "cs_CZ",
+          "voices": [
+            {
+              "name": "jirka",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "cs_CZ-jirka-low.onnx",
+                  "model_config": "cs_CZ-jirka-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "cs_CZ-jirka-medium.onnx",
+                  "model_config": "cs_CZ-jirka-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Russian",
+      "directory": "ru",
+      "dialects": [
+        {
+          "name": "Russia",
+          "directory": "ru_RU",
+          "voices": [
+            {
+              "name": "denis",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ru_RU-denis-medium.onnx",
+                  "model_config": "ru_RU-denis-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "ruslan",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ru_RU-ruslan-medium.onnx",
+                  "model_config": "ru_RU-ruslan-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "irina",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ru_RU-irina-medium.onnx",
+                  "model_config": "ru_RU-irina-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "dmitri",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ru_RU-dmitri-medium.onnx",
+                  "model_config": "ru_RU-dmitri-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Romanian",
+      "directory": "ro",
+      "dialects": [
+        {
+          "name": "Romania",
+          "directory": "ro_RO",
+          "voices": [
+            {
+              "name": "mihai",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ro_RO-mihai-medium.onnx",
+                  "model_config": "ro_RO-mihai-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Portuguese",
+      "directory": "pt",
+      "dialects": [
+        {
+          "name": "Brazil",
+          "directory": "pt_BR",
+          "voices": [
+            {
+              "name": "faber",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "pt_BR-faber-medium.onnx",
+                  "model_config": "pt_BR-faber-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "edresson",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "pt_BR-edresson-low.onnx",
+                  "model_config": "pt_BR-edresson-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Portugal",
+          "directory": "pt_PT",
+          "voices": [
+            {
+              "name": "tugão",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "pt_PT-tugão-medium.onnx",
+                  "model_config": "pt_PT-tugão-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chinese",
+      "directory": "zh",
+      "dialects": [
+        {
+          "name": "China",
+          "directory": "zh_CN",
+          "voices": [
+            {
+              "name": "huayan",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "zh_CN-huayan-medium.onnx",
+                  "model_config": "zh_CN-huayan-medium.onnx.json"
+                },
+                {
+                  "name": "x_low",
+                  "model": "zh_CN-huayan-x_low.onnx",
+                  "model_config": "zh_CN-huayan-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ukrainian",
+      "directory": "uk",
+      "dialects": [
+        {
+          "name": "Ukraine",
+          "directory": "uk_UA",
+          "voices": [
+            {
+              "name": "lada",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "uk_UA-lada-x_low.onnx",
+                  "model_config": "uk_UA-lada-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "ukrainian_tts",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "uk_UA-ukrainian_tts-medium.onnx",
+                  "model_config": "uk_UA-ukrainian_tts-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Serbian",
+      "directory": "sr",
+      "dialects": [
+        {
+          "name": "Serbia",
+          "directory": "sr_RS",
+          "voices": [
+            {
+              "name": "serbski_institut",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sr_RS-serbski_institut-medium.onnx",
+                  "model_config": "sr_RS-serbski_institut-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arabic",
+      "directory": "ar",
+      "dialects": [
+        {
+          "name": "Jordan",
+          "directory": "ar_JO",
+          "voices": [
+            {
+              "name": "kareem",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "sr_RS-serbski_institut-medium.onnx",
+                  "model_config": "sr_RS-serbski_institut-medium.onnx.json"
+                },
+                {
+                  "name": "low",
+                  "model": "ar_JO-kareem-low.onnx",
+                  "model_config": "ar_JO-kareem-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "ar_JO-kareem-medium.onnx",
+                  "model_config": "ar_JO-kareem-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hungarian",
+      "directory": "_script",
+      "dialects": []
+    },
+    {
+      "name": "Hungary",
+      "directory": "hu",
+      "dialects": [
+        {
+          "name": "",
+          "directory": "hu_HU",
+          "voices": [
+            {
+              "name": "berta",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "hu_HU-berta-medium.onnx",
+                  "model_config": "hu_HU-berta-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "imre",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "hu_HU-imre-medium.onnx",
+                  "model_config": "hu_HU-imre-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "anna",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "hu_HU-anna-medium.onnx",
+                  "model_config": "hu_HU-anna-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dutch",
+      "directory": "nl",
+      "dialects": [
+        {
+          "name": "Belgium",
+          "directory": "nl_BE",
+          "voices": [
+            {
+              "name": "rdh",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "nl_BE-rdh-medium.onnx",
+                  "model_config": "nl_BE-rdh-medium.onnx.json"
+                },
+                {
+                  "name": "x_low",
+                  "model": "nl_BE-rdh-x_low.onnx",
+                  "model_config": "nl_BE-rdh-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "nathalie",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "nl_BE-nathalie-medium.onnx",
+                  "model_config": "nl_BE-nathalie-medium.onnx.json"
+                },
+                {
+                  "name": "x_low",
+                  "model": "nl_BE-nathalie-x_low.onnx",
+                  "model_config": "nl_BE-nathalie-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Netherlands",
+          "directory": "nl_NL",
+          "voices": [
+            {
+              "name": "mls_5809",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "nl_NL-mls_5809-low.onnx",
+                  "model_config": "nl_NL-mls_5809-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "nl_NL-mls-medium.onnx",
+                  "model_config": "nl_NL-mls-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls_7432",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "nl_NL-mls_7432-low.onnx",
+                  "model_config": "nl_NL-mls_7432-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nepali",
+      "directory": "ne",
+      "dialects": [
+        {
+          "name": "Nepal",
+          "directory": "ne_NP",
+          "voices": [
+            {
+              "name": "google",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ne_NP-google-medium.onnx",
+                  "model_config": "ne_NP-google-medium.onnx.json"
+                },
+                {
+                  "name": "x_low",
+                  "model": "ne_NP-google-x_low.onnx",
+                  "model_config": "ne_NP-google-x_low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Georgian",
+      "directory": "ka",
+      "dialects": [
+        {
+          "name": "Georgia",
+          "directory": "ka_GE",
+          "voices": [
+            {
+              "name": "natia",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "ka_GE-natia-medium.onnx",
+                  "model_config": "ka_GE-natia-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "German",
+      "directory": "de",
+      "dialects": [
+        {
+          "name": "Germany",
+          "directory": "de_DE",
+          "voices": [
+            {
+              "name": "thorsten",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "de_DE-thorsten-high.onnx",
+                  "model_config": "de_DE-thorsten-high.onnx.json"
+                },
+                {
+                  "name": "low",
+                  "model": "de_DE-thorsten-low.onnx",
+                  "model_config": "de_DE-thorsten-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "de_DE-thorsten-medium.onnx",
+                  "model_config": "de_DE-thorsten-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "thorsten_emotional",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "de_DE-thorsten_emotional-medium.onnx",
+                  "model_config": "de_DE-thorsten_emotional-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "karlsson",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "de_DE-karlsson-low.onnx",
+                  "model_config": "de_DE-karlsson-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "eva_k",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "de_DE-eva_k-x_low.onnx",
+                  "model_config": "de_DE-eva_k-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "pavoque",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "de_DE-pavoque-low.onnx",
+                  "model_config": "de_DE-pavoque-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "de_DE-mls-medium.onnx",
+                  "model_config": "de_DE-mls-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "ramona",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "de_DE-ramona-low.onnx",
+                  "model_config": "de_DE-ramona-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "kerstin",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "de_DE-kerstin-low.onnx",
+                  "model_config": "de_DE-kerstin-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finnish",
+      "directory": "fi",
+      "dialects": [
+        {
+          "name": "Finland",
+          "directory": "fi_FI",
+          "voices": [
+            {
+              "name": "harri",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "fi_FI-harri-low.onnx",
+                  "model_config": "fi_FI-harri-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "fi_FI-harri-medium.onnx",
+                  "model_config": "fi_FI-harri-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "French",
+      "directory": "fr",
+      "dialects": [
+        {
+          "name": "France",
+          "directory": "fr_FR",
+          "voices": [
+            {
+              "name": "tom",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "fr_FR-tom-medium.onnx",
+                  "model_config": "fr_FR-tom-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls_1840",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "fr_FR-mls_1840-low.onnx",
+                  "model_config": "fr_FR-mls_1840-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "upmc",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "fr_FR-upmc-medium.onnx",
+                  "model_config": "fr_FR-upmc-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "siwis",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "fr_FR-siwis-low.onnx",
+                  "model_config": "fr_FR-siwis-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "fr_FR-siwis-medium.onnx",
+                  "model_config": "fr_FR-siwis-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "fr_FR-mls-medium.onnx",
+                  "model_config": "fr_FR-mls-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "gilles",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "fr_FR-gilles-low.onnx",
+                  "model_config": "fr_FR-gilles-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spanish",
+      "directory": "es",
+      "dialects": [
+        {
+          "name": "Mexico",
+          "directory": "es_MX",
+          "voices": [
+            {
+              "name": "ald",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "es_MX-ald-medium.onnx",
+                  "model_config": "es_MX-ald-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Spain",
+          "directory": "es_ES",
+          "voices": [
+            {
+              "name": "sharvard",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "es_ES-sharvard-medium.onnx",
+                  "model_config": "es_ES-sharvard-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "carlfm",
+              "samples": [
+                {
+                  "name": "x_low",
+                  "model": "es_ES-carlfm-x_low.onnx",
+                  "model_config": "es_ES-carlfm-x_low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls_9972",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "es_ES-mls_9972-low.onnx",
+                  "model_config": "es_ES-mls_9972-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "davefx",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "es_ES-davefx-medium.onnx",
+                  "model_config": "es_ES-davefx-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "mls_10246",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "es_ES-mls_10246-low.onnx",
+                  "model_config": "es_ES-mls_10246-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "English",
+      "directory": "en",
+      "dialects": [
+        {
+          "name": "United States",
+          "directory": "en_US",
+          "voices": [
+            {
+              "name": "hfc_male",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-hfc_male-medium.onnx",
+                  "model_config": "en_US-hfc_male-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "l2arctic",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-l2arctic-medium.onnx",
+                  "model_config": "en_US-l2arctic-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "arctic",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-l2arctic-medium.onnx",
+                  "model_config": "en_US-l2arctic-medium.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-arctic-medium.onnx",
+                  "model_config": "en_US-arctic-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "lessac",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "en_US-lessac-high.onnx",
+                  "model_config": "en_US-lessac-high.onnx.json"
+                },
+                {
+                  "name": "low",
+                  "model": "en_US-lessac-low.onnx",
+                  "model_config": "en_US-lessac-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-lessac-medium.onnx",
+                  "model_config": "en_US-lessac-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "libritts_r",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-libritts_r-medium.onnx",
+                  "model_config": "en_US-libritts_r-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "hfc_female",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-hfc_female-medium.onnx",
+                  "model_config": "en_US-hfc_female-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "libritts",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "en_US-libritts-high.onnx",
+                  "model_config": "en_US-libritts-high.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "amy",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "en_US-libritts-high.onnx",
+                  "model_config": "en_US-libritts-high.onnx.json"
+                },
+                {
+                  "name": "low",
+                  "model": "en_US-amy-low.onnx",
+                  "model_config": "en_US-amy-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-amy-medium.onnx",
+                  "model_config": "en_US-amy-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "joe",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_US-amy-medium.onnx",
+                  "model_config": "en_US-amy-medium.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-joe-medium.onnx",
+                  "model_config": "en_US-joe-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "danny",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "en_US-danny-low.onnx",
+                  "model_config": "en_US-danny-low.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "kusal",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "en_US-danny-low.onnx",
+                  "model_config": "en_US-danny-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-kusal-medium.onnx",
+                  "model_config": "en_US-kusal-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "ryan",
+              "samples": [
+                {
+                  "name": "high",
+                  "model": "en_US-ryan-high.onnx",
+                  "model_config": "en_US-ryan-high.onnx.json"
+                },
+                {
+                  "name": "low",
+                  "model": "en_US-ryan-low.onnx",
+                  "model_config": "en_US-ryan-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_US-ryan-medium.onnx",
+                  "model_config": "en_US-ryan-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "kathleen",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "en_US-kathleen-low.onnx",
+                  "model_config": "en_US-kathleen-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Grat Britain",
+          "directory": "en_GB",
+          "voices": [
+            {
+              "name": "semaine",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-semaine-medium.onnx",
+                  "model_config": "en_GB-semaine-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "jenny_dioco",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-jenny_dioco-medium.onnx",
+                  "model_config": "en_GB-jenny_dioco-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "aru",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-aru-medium.onnx",
+                  "model_config": "en_GB-aru-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "vctk",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-vctk-medium.onnx",
+                  "model_config": "en_GB-vctk-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "northern_english_male",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-northern_english_male-medium.onnx",
+                  "model_config": "en_GB-northern_english_male-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "alan",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "en_GB-alan-low.onnx",
+                  "model_config": "en_GB-alan-low.onnx.json"
+                },
+                {
+                  "name": "medium",
+                  "model": "en_GB-alan-medium.onnx",
+                  "model_config": "en_GB-alan-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "alba",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "en_GB-alba-medium.onnx",
+                  "model_config": "en_GB-alba-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "southern_english_female",
+              "samples": [
+                {
+                  "name": "low",
+                  "model": "en_GB-southern_english_female-low.onnx",
+                  "model_config": "en_GB-southern_english_female-low.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Farsi",
+      "directory": "fa",
+      "dialects": [
+        {
+          "name": "Iran",
+          "directory": "fa_IR",
+          "voices": [
+            {
+              "name": "gyro",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "fa_IR-gyro-medium.onnx",
+                  "model_config": "fa_IR-gyro-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "amir",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "fa_IR-amir-medium.onnx",
+                  "model_config": "fa_IR-amir-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turkish",
+      "directory": "tr",
+      "dialects": [
+        {
+          "name": "Turkey",
+          "directory": "tr_TR",
+          "voices": [
+            {
+              "name": "fahrettin",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "tr_TR-fahrettin-medium.onnx",
+                  "model_config": "tr_TR-fahrettin-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "fettah",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "tr_TR-fettah-medium.onnx",
+                  "model_config": "tr_TR-fettah-medium.onnx.json"
+                }
+              ]
+            },
+            {
+              "name": "dfki",
+              "samples": [
+                {
+                  "name": "medium",
+                  "model": "tr_TR-dfki-medium.onnx",
+                  "model_config": "tr_TR-dfki-medium.onnx.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

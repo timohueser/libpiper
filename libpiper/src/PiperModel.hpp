@@ -16,18 +16,18 @@ namespace piper {
 class PiperModel
 {
 public:
-  PiperModel(std::shared_ptr<Voice> voice);
+  PiperModel(const std::string& modelPath, const std::string& modelConfigPath = "");
   ~PiperModel();
 
   std::vector<int16_t> textToSpeech(std::string text);
-  void saveToWavFile(std::string fileName, std::vector<int16_t> audioBuffer);
+  void saveToWavFile(const std::string& fileName, std::vector<int16_t> audioBuffer);
 
 private:
   std::string eSpeakDataPath;
   bool useTashkeel = false;
   std::optional<std::string> tashkeelModelPath;
   std::unique_ptr<tashkeel::State> tashkeelState;
-  std::shared_ptr<Voice> m_voice;
+  Voice m_voice;
   SynthesisResult m_lastSynthesisResult;
 };
 } // namespace piper

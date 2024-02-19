@@ -1,4 +1,4 @@
-add_library(libpiper STATIC src/tashkeel.cpp src/shared.cpp src/phonemize.cpp
+add_library(libpiper STATIC src/tashkeel.cpp src/phonemize.cpp
   src/phoneme_ids.cpp src/PiperModel.cpp src/Voice.cpp src/FileManager.cpp)
 
 set_target_properties(libpiper PROPERTIES
@@ -169,8 +169,10 @@ target_include_directories(libpiper PUBLIC
   ${PIPER_PHONEMIZE_DIR}/src
   ${ONNXRUNTIME_DIR}/include
   ${ESPEAK_NG_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/utf8
+  )
 
 target_compile_definitions(libpiper PUBLIC _PIPER_VERSION=${piper_version})
 

@@ -74,7 +74,7 @@ std::set<char32_t> HARAKAT_CHARS{
 
 std::set<int> INVALID_HARAKA_IDS{UNK_ID, 8};
 
-PIPERPHONEMIZE_EXPORT void tashkeel_load(std::string modelPath, State& state) {
+void tashkeel_load(std::string modelPath, State& state) {
   state.env = Ort::Env(OrtLoggingLevel::ORT_LOGGING_LEVEL_WARNING, instanceName.c_str());
   state.env.DisableTelemetryEvents();
   state.options.SetExecutionMode(ExecutionMode::ORT_PARALLEL);
@@ -89,7 +89,7 @@ PIPERPHONEMIZE_EXPORT void tashkeel_load(std::string modelPath, State& state) {
   state.onnx = Ort::Session(state.env, modelPathStr, state.options);
 }
 
-PIPERPHONEMIZE_EXPORT std::string tashkeel_run(std::string text, State& state) {
+std::string tashkeel_run(std::string text, State& state) {
   auto memoryInfo = Ort::MemoryInfo::CreateCpu(OrtAllocatorType::OrtArenaAllocator, OrtMemType::OrtMemTypeDefault);
 
   std::vector<Ort::Value> inputTensors;

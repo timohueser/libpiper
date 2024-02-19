@@ -6,8 +6,6 @@
 #include <string>
 #include <vector>
 
-#include "shared.hpp"
-
 #define CLAUSE_INTONATION_FULL_STOP 0x00000000
 #define CLAUSE_INTONATION_COMMA 0x00001000
 #define CLAUSE_INTONATION_QUESTION 0x00002000
@@ -50,30 +48,11 @@ struct eSpeakPhonemeConfig
 // Returns phonemes for each sentence as a separate std::vector.
 //
 // Assumes espeak_Initialize has already been called.
-PIPERPHONEMIZE_EXPORT void
-phonemize_eSpeak(std::string text, eSpeakPhonemeConfig& config, std::vector<std::vector<Phoneme>>& phonemes);
+void phonemize_eSpeak(const std::string& text,
+                      eSpeakPhonemeConfig& config,
+                      std::vector<std::vector<Phoneme>>& phonemes);
 
-enum TextCasing
-{
-  CASING_IGNORE = 0,
-  CASING_LOWER = 1,
-  CASING_UPPER = 2,
-  CASING_FOLD = 3
-};
-
-// Configuration for phonemize_codepoints
-struct CodepointsPhonemeConfig
-{
-  TextCasing casing = CASING_FOLD;
-  std::shared_ptr<PhonemeMap> phonemeMap;
-};
-
-// "Phonemizes" text as a series of normalized UTF-8 codepoints.
-// Returns a single std::vector of "phonemes".
-//
-// Does not detect sentence boundaries.
-PIPERPHONEMIZE_EXPORT void
-phonemize_codepoints(std::string text, CodepointsPhonemeConfig& config, std::vector<std::vector<Phoneme>>& phonemes);
+void addPunctuation(std::vector<Phoneme>& sentencePhonemes, int terminator, const eSpeakPhonemeConfig& config);
 
 } // namespace piper
 

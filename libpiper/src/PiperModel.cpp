@@ -8,11 +8,12 @@
 
 using namespace piper;
 
-PiperModel::PiperModel(std::shared_ptr<Voice> voice) : m_voice(voice) {
+PiperModel::PiperModel(const std::string& modelPath, const std::string& modelConfigPath)
+    : m_voice(modelPath, modelConfigPath) {
   eSpeakDataPath = std::filesystem::absolute(FileManager::getDataSharePath() / "espeak-ng-data").string();
 
   // Enable libtashkeel for Arabic
-  if (m_voice->getLanguage() == "ar")
+  if (m_voice.getLanguage() == "ar")
   {
     useTashkeel = true;
     tashkeelModelPath = std::filesystem::absolute(FileManager::getDataSharePath() / "libtashkeel_model.ort").string();
@@ -63,7 +64,7 @@ PiperModel::~PiperModel() {
 // Phonemize text and synthesize audio
 std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
   std::vector<int16_t> audioBuffer;
-  std::size_t sentenceSilenceSamples = m_voice->getSentenceSilenceSamples();
+  std::size_t sentenceSilenceSamples = m_voice.getSentenceSilenceSamples();
 
   if (useTashkeel)
   {
@@ -82,7 +83,7 @@ std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
 
   // Use espeak-ng for phonemization
   eSpeakPhonemeConfig eSpeakConfig;
-  eSpeakConfig.voice = m_voice->getLanguage();
+  eSpeakConfig.voice = m_voice.getLanguage();
   phonemize_eSpeak(text, eSpeakConfig, phonemes);
 
   // Synthesize each sentence independently.
@@ -110,12 +111,12 @@ std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
 
     // Use phoneme/id map from config
     PhonemeIdConfig idConfig;
-    idConfig.phonemeIdMap = std::make_shared<PhonemeIdMap>(m_voice->getPhonemeIdMap());
+    idConfig.phonemeIdMap = std::make_shared<PhonemeIdMap>(m_voice.getPhonemeIdMap());
 
-    if (m_voice->getPhonemeSilenceSeconds())
+    if (m_voice.getPhonemeSilenceSeconds())
     {
       // Split into phrases
-      std::map<Phoneme, float> phonemeSilenceSeconds = m_voice->getPhonemeSilenceSeconds().value();
+      std::map<Phoneme, float> phonemeSilenceSeconds = m_voice.getPhonemeSilenceSeconds().value();
 
       auto currentPhrasePhonemes = std::make_shared<std::vector<Phoneme>>();
       phrasePhonemes.push_back(currentPhrasePhonemes);
@@ -130,7 +131,7 @@ std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
         {
           // Split at phrase boundary
           phraseSilenceSamples.push_back(
-              (std::size_t)(phonemeSilenceSeconds[currentPhoneme] * m_voice->getSampleRate() * m_voice->getChannels()));
+              (std::size_t)(phonemeSilenceSeconds[currentPhoneme] * m_voice.getSampleRate() * m_voice.getChannels()));
 
           currentPhrasePhonemes = std::make_shared<std::vector<Phoneme>>();
           phrasePhonemes.push_back(currentPhrasePhonemes);
@@ -180,7 +181,7 @@ std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
       }
 
       // ids -> audio
-      m_voice->synthesize(audioBuffer, phonemeIds, phraseResults[phraseIdx]);
+      m_voice.synthesize(audioBuffer, phonemeIds, phraseResults[phraseIdx]);
 
       // Add end of phrase silence
       for (std::size_t i = 0; i < phraseSilenceSamples[phraseIdx]; i++)
@@ -228,14 +229,14 @@ std::vector<int16_t> PiperModel::textToSpeech(std::string text) {
 }
 
 // Phonemize text and synthesize audio to WAV file
-void PiperModel::saveToWavFile(std::string fileName, std::vector<int16_t> audioBuffer) {
+void PiperModel::saveToWavFile(const std::string& fileName, std::vector<int16_t> audioBuffer) {
   // Output audio to automatically-named WAV file in a directory
   std::ofstream audioFile(fileName, std::ios::binary);
 
   // Write WAV
-  writeWavHeader(m_voice->getSampleRate(),
-                 m_voice->getSampleWidth(),
-                 m_voice->getChannels(),
+  writeWavHeader(m_voice.getSampleRate(),
+                 m_voice.getSampleWidth(),
+                 m_voice.getChannels(),
                  (int32_t) audioBuffer.size(),
                  audioFile);
 

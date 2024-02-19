@@ -4,7 +4,8 @@
 #include <filesystem>
 #include <string>
 
-class FileManager {
+class FileManager
+{
 public:
   FileManager() = default;
   static std::filesystem::path getDataSharePath();
